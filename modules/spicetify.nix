@@ -1,13 +1,14 @@
+# https://github.com/Gerg-L/spicetify-nix
 { pkgs, inputs, ... }:
 let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in
 {
   imports = [inputs.spicetify-nix.nixosModules.default];
 
   programs.spicetify = {
     enable = true;
-    spicetifyPackage = inputs.nixpkgs.legacyPackages."${pkgs.system}".spicetify-cli;
+    # spicetifyPackage = inputs.nixpkgs.legacyPackages."${pkgs.system}".spicetify-cli;
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts

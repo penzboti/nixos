@@ -54,9 +54,6 @@
   };
 };
 
-# List packages installed in system profile. To search, run:
-# $ nix search wget
-
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
 # programs.mtr.enable = true;
@@ -64,9 +61,6 @@
 #   enable = true;
 #   enableSSHSupport = true;
 # };
-
-# Enable the OpenSSH daemon.
-# services.openssh.enable = true;
 
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
@@ -81,8 +75,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     kitty
-    rustup
-    # spotify  # spicetify-nix handles it
     discord
     vscode
     rofi
@@ -92,31 +84,38 @@
     betterdiscordctl
     zip
     unzip
-    wev
     wl-clipboard-rs
-    deno
     oh-my-posh
     wget
     libgcc
-    zsync
     bash-completion
     hyprshot
     obsidian 
-    obs-studio
     vlc
     gitui
     kdePackages.dolphin
     portal
     inputs.zen-browser.packages."${system}".default
-    libresprite
-    ldtk
-    lunarvim
+# these three are cool apps, but i hardly ever use them. maybe nix-shell -p works
+    # obs-studio
+    # libresprite
+    # ldtk
     hyprlock
     swaynotificationcenter
     firefoxpwa
     playerctl
     everest-mons
     pamixer
+    # ghostty # could be cool
+    # discordo # could also be cool
+    # notion-app-enhanced # doesnt work
+    zed-editor
+    fastfetch
+    fd
+    ripgrep
+    nodePackages_latest.live-server
+    fzf
+    bibata-cursors
   ];
 
   programs.git.enable = true;
@@ -146,7 +145,7 @@
   fonts.fontDir.enable = true;
 
   programs.steam.enable = true;
-  programs.java.enable = true;
+  # programs.java.enable = true;
 
   hardware.bluetooth = {
     enable = true;
@@ -161,7 +160,6 @@
   };
 
   home-manager = {
-    # also pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
     users = {
       "penzboti" = import ./home.nix;
