@@ -87,7 +87,7 @@
     wl-clipboard-rs
     oh-my-posh
     wget
-    libgcc
+    gcc
     bash-completion
     hyprshot
     obsidian 
@@ -104,18 +104,18 @@
     swaynotificationcenter
     firefoxpwa
     playerctl
-    everest-mons
     pamixer
     # ghostty # could be cool
     # discordo # could also be cool
     # notion-app-enhanced # doesnt work
     zed-editor
     fastfetch
+    # nvim config packages
     fd
     ripgrep
     nodePackages_latest.live-server
     fzf
-    bibata-cursors
+    # until here
   ];
 
   programs.git.enable = true;

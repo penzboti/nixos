@@ -5,7 +5,15 @@ https://www.reddit.com/r/NixOS/comments/16zs4sn/git_is_making_hardwareconfigurat
 https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/
 https://github.com/fufexan/dotfiles
 https://github.com/nix-community/home-manager
-https://wiki.nixos.org/wiki/Zed
+    - not zed bc of cross platform compatibility
+    - full hyprland
 - external screens (hdmi)
+# maybe
 - discord screenshare & obs (might work or might not idk)
 - networkmanager might take up several gigabytes
+# manually installed
+- waybar config
+- rofi style
+- swaync style
+- bibata crusors
+- cross platform configs: nvim
