@@ -76,46 +76,48 @@
     neovim
     kitty
     discord
-    vscode
     rofi
     waybar
     hyprpaper
     gh
     betterdiscordctl
     zip
-    unzip
+    unzip # required
     wl-clipboard-rs
     oh-my-posh
     wget
-    gcc
+    gcc # need for bunch of apps and functions globally
     bash-completion
     hyprshot
     obsidian 
-    vlc
+    # vlc # might not need it bc of qimgv
     gitui
-    kdePackages.dolphin
+    # kdePackages.dolphin # replaced by thunar (for testing)
+    xfce.thunar
     portal
     inputs.zen-browser.packages."${system}".default
-# these three are cool apps, but i hardly ever use them. maybe nix-shell -p works
-    # obs-studio
-    # libresprite
-    # ldtk
     hyprlock
     swaynotificationcenter
     firefoxpwa
     playerctl
     pamixer
-    # ghostty # could be cool
-    # discordo # could also be cool
-    # notion-app-enhanced # doesnt work
-    zed-editor
+    # zed-editor
     fastfetch
-    # nvim config packages
+    yazi
+    chafa
+    qimgv
+    # NOTE: nvim config packages
     fd
     ripgrep
     nodePackages_latest.live-server
     fzf
-    # until here
+    # NOTE: left out
+    # obs-studio # too big
+    # libresprite # too big
+    # ldtk # too big
+    # ghostty # could be cool
+    # discordo # could also be cool
+    # notion-app-enhanced # doesnt work
   ];
 
   programs.git.enable = true;
