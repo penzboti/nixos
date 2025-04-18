@@ -92,7 +92,6 @@
     obsidian 
     # vlc # might not need it bc of qimgv
     gitui
-    # kdePackages.dolphin # replaced by thunar (for testing)
     xfce.thunar
     portal
     inputs.zen-browser.packages."${system}".default
@@ -106,6 +105,9 @@
     yazi
     chafa
     qimgv
+    kanagawa-gtk-theme
+    kanagawa-icon-theme
+    gnome-tweaks # set thunar theme and mouse cursor theme
     # NOTE: nvim config packages
     fd
     ripgrep
@@ -183,4 +185,20 @@
     package = pkgs.firefox;
     nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
   };
+
+  # https://nixos.wiki/wiki/Storage_optimization
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  nix.extraOptions = ''
+    min-free = ${toString (100 * 1024 * 1024)}
+    max-free = ${toString (1024 * 1024 * 1024)}
+  '';
+
+  # need for touchpad toggle
+  # disables every password input
+  # not a bad thing for me *yet*
+  security.sudo.wheelNeedsPassword = false;
 }
