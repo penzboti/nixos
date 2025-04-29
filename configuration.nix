@@ -108,6 +108,8 @@
     kanagawa-gtk-theme
     kanagawa-icon-theme
     gnome-tweaks # set thunar theme and mouse cursor theme
+    webcamoid # camera
+    libnotify
     # NOTE: nvim config packages
     fd
     ripgrep
@@ -200,5 +202,12 @@
   # need for touchpad toggle
   # disables every password input
   # not a bad thing for me *yet*
-  security.sudo.wheelNeedsPassword = false;
+  # security.sudo.wheelNeedsPassword = false;
+  # security.sudo.extraConfig = ''
+  #   penzboti ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/tee /sys/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-0/i2c-ELAN0799:00/0018:04F3:31B4.0001/input/*/inhibited
+  # '';
+  # security.sudo.extraRules = [
+  # { users = [ "penzboti" ];
+  #   commands = [ { command = "/run/current-system/sw/bin/tee /sys/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-0/i2c-ELAN0799:00/0018:04F3:31B4.0001/input/*/inhibited"; options = [ "SETENV" "NOPASSWD" ]; } ]; }
+  # ];
 }

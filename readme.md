@@ -7,13 +7,12 @@ https://github.com/fufexan/dotfiles
 https://github.com/nix-community/home-manager
     - not zed bc of cross platform compatibility
     - full hyprland
-- external screens (hdmi)
+    - bashrc
 # maybe
 - discord screenshare & obs (might work or might not idk)
-- networkmanager might take up several gigabytes
 # manually installed
-- waybar config
-- rofi style
-- swaync style
-- bibata crusors
+- waybar config -> flake that
+- rofi style -> flake that (idk how i even did this)
+- swaync style -> flake that (i might know how i did this)
+- bibata crusors GNOME-TWEAKS
 - cross platform configs: nvim

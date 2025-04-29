@@ -19,6 +19,7 @@ in
       webnowplaying
     ];
     theme = spicePkgs.themes.text;
+    colorScheme = "";
     enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus
     ];
