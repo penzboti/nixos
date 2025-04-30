@@ -8,11 +8,10 @@ https://github.com/nix-community/home-manager
     - not zed bc of cross platform compatibility
     - full hyprland
     - bashrc
-# maybe
-- discord screenshare & obs (might work or might not idk)
 # manually installed
 - waybar config -> flake that
 - rofi style -> flake that (idk how i even did this)
 - swaync style -> flake that (i might know how i did this)
+- hyprlock style -> flake that
 - bibata crusors GNOME-TWEAKS
-- cross platform configs: nvim
+- cross platform configs: nvim, bash scripts

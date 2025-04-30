@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  home.stateVersion = "24.05"; # DO NOT CHANGE UNDER ANY CIRCUMSTANCES
+
   home.username = "penzboti";
   home.homeDirectory = "/home/penzboti";
-
-  home.stateVersion = "24.05"; # DO NOT CHANGE UNDER ANY CIRCUMSTANCES
 
   # home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
