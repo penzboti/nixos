@@ -144,29 +144,31 @@
     wget
     gcc # need for bunch of apps and functions globally
     bash-completion
-    hyprshot
+    hyprshot # screenshot tool
     obsidian 
     gitui
-    xfce.thunar
-    portal
+    lazygit
+    xfce.thunar # file manager
+    portal # send files across devices
     inputs.zen-browser.packages."${system}".default
     hyprlock
     swaynotificationcenter
     firefoxpwa
-    playerctl
-    pamixer
+    playerctl # display playing audio
+    pamixer # audio level tool
     fastfetch
-    yazi
-    chafa
-    qimgv
+    chafa # image viewer (but in the terminal)
+    qimgv # media viewer
     kanagawa-gtk-theme
     kanagawa-icon-theme
     gnome-tweaks # set thunar theme and mouse cursor theme
     webcamoid # camera
-    libnotify
+    libnotify # custom notifiactions
     udiskie # automount external storage devices TODO: need hyprland start
-    networkmanagerapplet # wifi gui interface; in system tray, which sounds 
-    bibata-cursors # maybe it apears in gnome tweaks
+    networkmanagerapplet # wifi gui interface; in system tray, which sounds meh
+    bibata-cursors # it apears in gnome tweaks
+    helix
+    yazi # for helix file editor
     # NOTE: neovim config packages
     neovim
     fd

@@ -8,10 +8,14 @@ https://github.com/nix-community/home-manager
     - not zed bc of cross platform compatibility
     - full hyprland
     - bashrc
+- yazi config
 # manually installed
 - waybar config -> flake that
 - rofi style -> flake that (idk how i even did this)
 - swaync style -> flake that (i might know how i did this)
 - hyprlock style -> flake that
-- bibata crusors GNOME-TWEAKS
 - cross platform configs: nvim, bash scripts
+- oh my posh theme -> i think you can apply it in conf.nix
+## with GNOME-TWEAKS
+- bibata cursors
+- thunar theme
