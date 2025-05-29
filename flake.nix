@@ -27,6 +27,9 @@
       # system = system;
       config.allowUnfree = true;
       allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "dotnet-sdk-6.0.428"
+      ];
     };
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {

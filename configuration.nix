@@ -129,6 +129,10 @@
   ### PROGRAMS ###
   ################
 
+  # some ideas are from: https://www.namtao.com/oxidise-your-cli-2025/
+  # TODO: with home manager and whatnot split this into gui and only cmd applications
+  # somehow you can make two devices use this configuration and it would be useful for this
+  # and also other distros can use this as a package manager but don't use hyprland in that situation please
   environment.systemPackages = with pkgs; [
     kitty
     discord
@@ -156,37 +160,50 @@
     firefoxpwa
     playerctl # display playing audio
     pamixer # audio level tool
-    fastfetch
+    fastfetch # neofetch was archived
     chafa # image viewer (but in the terminal)
     qimgv # media viewer
     kanagawa-gtk-theme
     kanagawa-icon-theme
     gnome-tweaks # set thunar theme and mouse cursor theme
-    webcamoid # camera
+    webcamoid # camera app
     libnotify # custom notifiactions
     udiskie # automount external storage devices TODO: need hyprland start
     networkmanagerapplet # wifi gui interface; in system tray, which sounds meh
     bibata-cursors # it apears in gnome tweaks
-    helix
-    yazi # for helix file editor
-    # NOTE: neovim config packages
+    eza # better ls
+    fselect # select files with sql syntax
+    dua # storage tool
+    bat # cat with syntax highlighting
+    ripgrep-all # rg + docs, pdfs & zip files
+    uutils-coreutils-noprefix # faster coreutils
+    presenterm
+    nushell # lets try this shell aswell i mean might aswell
+    ghostty # lets try it fr this time
+    # NOTE: ide / text editor stuff
+    evil-helix # another text editor (with the vim feel)
+    yazi # terminal file editor
     neovim
     fd
     ripgrep
     nodePackages_latest.live-server
     fzf
+    dotnet-sdk_6
+    # (builtins.getFlake "github:helix-editor/helix").packages.${pkgs.system}.default # i would imagine this is helix master branch !! untested
     # NOTE: left out
     # obs-studio # too big
     # libresprite # too big
     # ldtk # too big
-    # ghostty # could be cool
     # discordo # could also be cool
     # notion-app-enhanced # doesnt work
     # zed-editor # don't need bc of nvim
     # vlc # might not need it bc of qimgv (in testing phase currently)
+    # wiki-tui # if you need it, -p it
+    # ncspot # terminal spotify client, which does not work with free accounts
+    # zellij # instead of tmux, but i never used either of them yet
   ];
 
-  programs = { # idk why is there a separate 'programs.'
+  programs = {
     git.enable = true;
     hyprland.enable = true;
     steam.enable = true;
@@ -195,6 +212,7 @@
       package = pkgs.firefox;
       nativeMessagingHosts.packages = [ pkgs.firefoxpwa ]; # pwa
     };
+    fish.enable = true; # try it, but don't set it as the default. https://nixos.wiki/wiki/Fish
   };
 
   programs.light.enable = true;
