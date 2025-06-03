@@ -88,7 +88,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true; # for https://codeberg.org/unspeaker/tek
   };
   services.pipewire.wireplumber.extraConfig = {
     bluetoothEnhancements = {
@@ -134,7 +134,6 @@
   # somehow you can make two devices use this configuration and it would be useful for this
   # and also other distros can use this as a package manager but don't use hyprland in that situation please
   environment.systemPackages = with pkgs; [
-    kitty
     discord
     rofi
     waybar
@@ -144,14 +143,11 @@
     zip
     unzip
     wl-clipboard-rs
-    oh-my-posh
     wget
     gcc # need for bunch of apps and functions globally
-    bash-completion
     hyprshot # screenshot tool
     obsidian 
-    gitui
-    lazygit
+    gitui # better than lazygit
     xfce.thunar # file manager
     portal # send files across devices
     inputs.zen-browser.packages."${system}".default
@@ -178,17 +174,21 @@
     ripgrep-all # rg + docs, pdfs & zip files
     uutils-coreutils-noprefix # faster coreutils
     presenterm
-    nushell # lets try this shell aswell i mean might aswell
-    ghostty # lets try it fr this time
+    # NOTE: shells & stuff
+    ghostty
+    kitty
+    oh-my-posh # for bash
+    oh-my-fish # for fish (i think i can rule this out tho atp)
+    bash-completion
     # NOTE: ide / text editor stuff
+    neovim
     evil-helix # another text editor (with the vim feel)
     yazi # terminal file editor
-    neovim
-    fd
     ripgrep
     nodePackages_latest.live-server
-    fzf
-    dotnet-sdk_6
+    fd # find files
+    fzf # find files also
+    dotnet-sdk_6 # the sdk 10 can be used with nix-shell -p
     # (builtins.getFlake "github:helix-editor/helix").packages.${pkgs.system}.default # i would imagine this is helix master branch !! untested
     # NOTE: left out
     # obs-studio # too big
@@ -201,6 +201,8 @@
     # wiki-tui # if you need it, -p it
     # ncspot # terminal spotify client, which does not work with free accounts
     # zellij # instead of tmux, but i never used either of them yet
+    # rainbowstream # twitter client loool (i would maybe get addicted)
+    # nushell # a shell that i didn't try yet
   ];
 
   programs = {
@@ -213,6 +215,11 @@
       nativeMessagingHosts.packages = [ pkgs.firefoxpwa ]; # pwa
     };
     fish.enable = true; # try it, but don't set it as the default. https://nixos.wiki/wiki/Fish
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+    };
   };
 
   programs.light.enable = true;
@@ -226,6 +233,34 @@
     nerd-fonts.jetbrains-mono
   ];
   fonts.fontDir.enable = true;
+
+  environment = {
+    sessionVariables = { # NOTE: doesn't need system relog; regular variables do.
+      DOTNET_ROOT = "${pkgs.dotnet-sdk_6}/share/dotnet/"; # https://www.reddit.com/r/NixOS/comments/15j1283/is_it_possible_to_add_shellaliases_if_package_is/
+    };
+
+    shellAliases = {
+      # system
+      shut = "shutdown -h now";
+      uefi = "systemctl reboot --firmware-setup";
+      space = "df -h | grep -E 'nvme0n1p1|Filesystem|/dev/disk/by-uuid/'";
+      devices = "sudo fdisk -l";
+      ip_private = "ip a";
+      ip_public = "curl ipinfo.io/ip";
+      brightness = "light";
+      volume = "pamixer --get-volume";
+      battery="upower -i $(upower -e | grep 'BAT') | grep -E 'state|to full|percentage'";
+      # nix
+      buildnix = "sudo nixos-rebuild switch --flake ~/nixos/#default"; 
+      updateflake = "nix flake update --flake ~/nixos";
+      garbage = "sudo nix-collect-garbage -d";
+      optimise_verbose = "nix-store --optimise -vv";
+      optimise = "nix store optimise";
+      # programs
+      dashboard = "nix-shell -p btop --run btop"; # kinda unnecessary and i didn't even use it once.
+      tek = "/home/penzboti/manual/tek";
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

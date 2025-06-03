@@ -7,7 +7,6 @@ https://github.com/fufexan/dotfiles
 https://github.com/nix-community/home-manager
     - not zed bc of cross platform compatibility
     - full hyprland
-    - bashrc
 # manually installed
 - waybar config -> flake that
 - rofi style -> flake that (idk how i even did this)
@@ -15,6 +14,11 @@ https://github.com/nix-community/home-manager
 - hyprlock style -> flake that
 - cross platform configs in separate repo: nvim, ..
 - oh my posh theme -> i think you can apply it in conf.nix
+### side note
+these 'flake-that' things are made every nixos build.
+so then i can't edit them?
+or i can edit them just dont rebuild the system then push to github and THEN rebuild the system.
+that seems to be the most straightforward.
 ## with GNOME-TWEAKS
 - bibata cursors
 - thunar theme
