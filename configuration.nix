@@ -134,46 +134,50 @@
   # somehow you can make two devices use this configuration and it would be useful for this
   # and also other distros can use this as a package manager but don't use hyprland in that situation please
   environment.systemPackages = with pkgs; [
+    # NOTE: applications
     discord
+    obsidian 
+    firefoxpwa
+    qimgv # media viewer
+    inputs.zen-browser.packages."${system}".default
+    # NOTE: hyprland system
     rofi
     waybar
     hyprpaper
-    gh
-    betterdiscordctl
-    zip
-    unzip
     wl-clipboard-rs
-    wget
-    gcc # need for bunch of apps and functions globally
     hyprshot # screenshot tool
-    obsidian 
-    gitui # better than lazygit
-    xfce.thunar # file manager
-    portal # send files across devices
-    inputs.zen-browser.packages."${system}".default
     hyprlock
     swaynotificationcenter
-    firefoxpwa
-    playerctl # display playing audio
-    pamixer # audio level tool
-    fastfetch # neofetch was archived
-    chafa # image viewer (but in the terminal)
-    qimgv # media viewer
-    kanagawa-gtk-theme
-    kanagawa-icon-theme
+    udiskie # automount external storage devices TODO: need hyprland start
+    # other ui stuff for hyprland (like other distros might have these already)
+    xfce.thunar # file manager
     gnome-tweaks # set thunar theme and mouse cursor theme
     webcamoid # camera app
-    libnotify # custom notifiactions
-    udiskie # automount external storage devices TODO: need hyprland start
-    networkmanagerapplet # wifi gui interface; in system tray, which sounds meh
+    kanagawa-gtk-theme
+    kanagawa-icon-theme
     bibata-cursors # it apears in gnome tweaks
+    # system utilities
+    zip
+    unzip
+    playerctl # display playing audio
+    pamixer # audio level tool
+    # NOTE: cli utilities
+    gh
+    betterdiscordctl
+    gcc # need for bunch of apps and functions globally
+    gitui # better than lazygit
+    portal # send files across devices
+    fastfetch # neofetch was archived
+    chafa # image viewer (but in the terminal)
     eza # better ls
-    fselect # select files with sql syntax
-    dua # storage tool
     bat # cat with syntax highlighting
     ripgrep-all # rg + docs, pdfs & zip files
-    uutils-coreutils-noprefix # faster coreutils
-    presenterm
+    # less important ones
+    wget # needed for sg idk
+    libnotify # custom notifiactions
+    networkmanagerapplet # wifi gui interface; in system tray, which sounds meh
+    uutils-coreutils-noprefix # faster coreutils; idk if it works
+    presenterm #!! untested
     # NOTE: shells & stuff
     ghostty
     kitty
@@ -183,13 +187,13 @@
     # NOTE: ide / text editor stuff
     neovim
     evil-helix # another text editor (with the vim feel)
+    # (builtins.getFlake "github:helix-editor/helix").packages.${pkgs.system}.default # i would imagine this is helix master branch !! untested
     yazi # terminal file editor
     ripgrep
     nodePackages_latest.live-server
     fd # find files
     fzf # find files also
     dotnet-sdk_6 # the sdk 10 can be used with nix-shell -p
-    # (builtins.getFlake "github:helix-editor/helix").packages.${pkgs.system}.default # i would imagine this is helix master branch !! untested
     # NOTE: left out
     # obs-studio # too big
     # libresprite # too big
@@ -203,6 +207,8 @@
     # zellij # instead of tmux, but i never used either of them yet
     # rainbowstream # twitter client loool (i would maybe get addicted)
     # nushell # a shell that i didn't try yet
+    # fselect # select files with sql syntax; statistically im not gonna use it
+    # dua # storage tool; statistically im not gonna use it
   ];
 
   programs = {
