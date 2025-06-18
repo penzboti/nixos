@@ -268,6 +268,16 @@
     };
   };
 
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "text/markdown" = ["zen-beta.desktop" "firefox.desktop"];
+    };
+    addedAssociations = {
+      "text/markdown" = ["zen-beta.desktop" "firefox.desktop"];
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
