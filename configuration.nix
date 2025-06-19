@@ -265,6 +265,7 @@
       # programs
       dashboard = "nix-shell -p btop --run btop"; # kinda unnecessary and i didn't even use it once.
       tek = "/home/penzboti/manual/tek";
+      firewall = "/home/penzboti/scripts/firewall.sh";
     };
   };
 
