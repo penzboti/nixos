@@ -265,7 +265,8 @@
       # programs
       dashboard = "nix-shell -p btop --run btop"; # kinda unnecessary and i didn't even use it once.
       tek = "/home/penzboti/manual/tek";
-      firewall = "/home/penzboti/scripts/firewall.sh";
+      firewall = "/home/penzboti/scripts/firewall.sh"; # mostly for pico park lol
+      hotspot = "nix-shell -p linux-wifi-hotspot --run 'nmcli r wifi off; rfkill unblock wlan; wihotspot-gui; nmcli r wifi on'" # mostly for pico park lol
     };
   };
 
