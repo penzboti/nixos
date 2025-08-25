@@ -140,6 +140,8 @@
     firefoxpwa
     qimgv # media viewer
     inputs.zen-browser.packages."${system}".default
+    gfn-electron
+    itch
     # NOTE: hyprland system
     rofi
     waybar
@@ -186,7 +188,8 @@
     bash-completion
     # NOTE: ide / text editor stuff
     neovim
-    evil-helix # another text editor (with the vim feel)
+    # helix (build from source since i need plugins)
+    steel
     # (builtins.getFlake "github:helix-editor/helix").packages.${pkgs.system}.default # i would imagine this is helix master branch !! untested
     yazi # terminal file editor
     ripgrep
@@ -266,7 +269,8 @@
       dashboard = "nix-shell -p btop --run btop"; # kinda unnecessary and i didn't even use it once.
       tek = "/home/penzboti/manual/tek";
       firewall = "/home/penzboti/scripts/firewall.sh"; # mostly for pico park lol
-      hotspot = "nix-shell -p linux-wifi-hotspot --run 'nmcli r wifi off; rfkill unblock wlan; wihotspot-gui; nmcli r wifi on'" # mostly for pico park lol
+      hotspot = "nix-shell -p linux-wifi-hotspot --run 'nmcli r wifi off; rfkill unblock wlan; wihotspot-gui; nmcli r wifi on'"; # mostly for pico park lol
+      hx = "/home/penzboti/.cargo/bin/hx";
     };
   };
 
