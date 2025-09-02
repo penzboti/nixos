@@ -158,6 +158,7 @@
     kanagawa-gtk-theme
     kanagawa-icon-theme
     bibata-cursors # it apears in gnome tweaks
+    libreoffice-qt6-fresh
     # system utilities
     zip
     unzip
@@ -197,6 +198,12 @@
     fd # find files
     fzf # find files also
     dotnet-sdk_6 # the sdk 10 can be used with nix-shell -p
+    # NOTE: for helix language servers
+    rust-analyzer
+    omnisharp-roslyn
+    typescript-language-server
+    markdown-oxide
+    nixd
     # NOTE: left out
     # obs-studio # too big
     # libresprite # too big
