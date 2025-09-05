@@ -197,13 +197,12 @@
     nodePackages_latest.live-server
     fd # find files
     fzf # find files also
-    dotnet-sdk_6 # the sdk 10 can be used with nix-shell -p
     # NOTE: for helix language servers
     rust-analyzer
-    omnisharp-roslyn
     typescript-language-server
     markdown-oxide
     nixd
+    python313Packages.jedi-language-server
     # NOTE: left out
     # obs-studio # too big
     # libresprite # too big
@@ -219,6 +218,7 @@
     # nushell # a shell that i didn't try yet
     # fselect # select files with sql syntax; statistically im not gonna use it
     # dua # storage tool; statistically im not gonna use it
+    # shotcut # a cross platform video editor; would prob be too large
   ];
 
   programs = {
