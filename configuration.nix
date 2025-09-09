@@ -88,15 +88,16 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true; # for https://codeberg.org/unspeaker/tek
+    # jack.enable = true; # for https://codeberg.org/unspeaker/tek maybe
   };
   services.pipewire.wireplumber.extraConfig = {
     bluetoothEnhancements = {
       "monitor.bluez.properties" = {
         "bluez5.enable-sbc-xq" = true;
         "bluez5.enable-hw-volume" = true;
-        "bluez5.codecs" = [ "sbc" "sbc_xq" "aac" ];
-        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" ];
+        "bluez5.codecs" = [ "sbc" "sbc_xq" "aac" ]; # default includes all
+        # "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" ]; # default - (minus) hfp
+        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" "hfp_hf" "hfp_ag" "hsp_hs" "hsp_ag" ]; # default + hsp
       };
     };
     "11-bluetooth-policy"."wireplumber.settings" = {
@@ -142,6 +143,8 @@
     inputs.zen-browser.packages."${system}".default
     gfn-electron
     itch
+    legendary-gl
+    heroic-unwrapped
     # NOTE: hyprland system
     rofi
     waybar
@@ -164,6 +167,7 @@
     unzip
     playerctl # display playing audio
     pamixer # audio level tool
+    pavucontrol # audio device switching tool and stuff
     # NOTE: cli utilities
     gh
     betterdiscordctl
