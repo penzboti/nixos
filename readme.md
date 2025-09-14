@@ -3,6 +3,9 @@ modularised nixos setup.
 using https://nixos-and-flakes.thiscute.world/
 and https://github.com/ryan4yin/nix-config/tree/i3-kickstarter
 
+# for new systems
+[[new-system.md](./docs/new-system.md)]
+
 # todo
 - full home-manager setup (& nix develop); [this](https://github.com/bevyengine/bevy/blob/main/docs/linux_dependencies.md) might help
 https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/

@@ -8,9 +8,8 @@
     unzip
     fastfetch
     gh
-    gitui
   ];
   programs = {
     git.enable = true;
-  };
+  }
 }

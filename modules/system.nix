@@ -4,7 +4,10 @@
   ...
 }: {
 
-  # DEFAULT NIX
+  # NIXOS
+  # later on, separate the options i wouldn't be able to use in macos or ubuntu
+ 
+  programs.nix-ld.enable = true; # run precompiled binaries on nix
 
   users.users.${username}= {
     isNormalUser = true;
@@ -26,6 +29,18 @@
   };
 
   networking.networkmanager.enable = true;
+  powerManagement.enable = true;
+
+  programs.light.enable = true;
+  services.upower.enable = true;
+
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    noto-fonts-cjk-sans
+    nerd-fonts.mononoki
+    nerd-fonts.jetbrains-mono
+  ];
+  fonts.fontDir.enable = true;
 
   # LOCALE
 

@@ -6,7 +6,7 @@
   imports = [
     ../modules/system.nix
     
-    ../modules/cli.nix
+    ../modules/cli-minimal.nix
     ../modules/neovim.nix
     # ../../modules/git_config.nix
   ];

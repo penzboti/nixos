@@ -8,7 +8,7 @@
 
     ../../bundles/essentials.nix
 
-    ../../modules/cli-extra.nix
+    ../../modules/cli-tools.nix
     ../../modules/helix.nix
   ];
 
@@ -17,5 +17,4 @@
   boot.loader.grub.useOSProber = true;
 
   system.stateVersion = "25.05";
-
 }
