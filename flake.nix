@@ -21,6 +21,7 @@
   outputs = { self, nixpkgs, ... }@inputs:
   let 
     system = "x86_64-linux";
+    username = "penzboti";
     pkgs = import nixpkgs {
       inherit system;
       # system = "x86_64-linux";
@@ -31,18 +32,42 @@
         "dotnet-sdk-6.0.428"
       ];
     };
+    specialArgs = {
+      inherit inputs;
+      inherit pkgs;
+      inherit username;
+    };
   in {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs;
-        pkgs = pkgs;
+    nixosConfigurations = {
+      # school-issued laptop (original)
+      school = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          ./hosts/school
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.extraSpecialArgs = inputs // specialArgs;
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+          }
+        ];
       };
-      modules = [
-        ./configuration.nix
-        # inputs.home-manager.nixosModules.default
-        ./modules/spicetify.nix
-        ./modules/sddm.nix
-      ];
+      # virtual machine
+      vm = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          "./hosts/vm"
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.extraSpecialArgs = inputs // specialArgs;
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+          }
+        ]
+      } 
     };
   };
 }
