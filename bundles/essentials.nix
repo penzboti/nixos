@@ -4,10 +4,10 @@
   ...
 }: {
   imports = [
-    ../../modules/system.nix
+    ../modules/system.nix
     
-    ../../modules/cli.nix
-    ../../modules/neovim.nix
+    ../modules/cli.nix
+    ../modules/neovim.nix
     # ../../modules/git_config.nix
   ];
 }

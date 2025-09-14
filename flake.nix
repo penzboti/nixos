@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let 
     system = "x86_64-linux";
     username = "penzboti";
@@ -44,8 +44,7 @@
         inherit specialArgs;
         modules = [
           ./hosts/school
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
@@ -58,16 +57,16 @@
       vm = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
-          "./hosts/vm"
-          {
+          ./hosts/vm
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = inputs // specialArgs;
             home-manager.users.${username} = import ./users/${username}/home.nix;
           }
-        ]
-      } 
+        ];
+      }; 
     };
   };
 }

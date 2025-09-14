@@ -12,5 +12,5 @@
   ];
   programs = {
     git.enable = true;
-  }
+  };
 }

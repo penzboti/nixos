@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  fish.enable = true;
+  programs.fish.enable = true;
   environment.systemPackages = with pkgs; [
     yazi # terminal file editor
     ripgrep
