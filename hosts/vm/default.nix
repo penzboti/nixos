@@ -13,6 +13,7 @@
     ../../modules/cli-tools.nix
     ../../modules/cli-extra.nix
     ../../modules/helix.nix
+    ../../modules/browsers.nix
   ];
 
   boot.loader.grub.enable = true;

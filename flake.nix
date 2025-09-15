@@ -33,6 +33,7 @@
       ];
     };
     specialArgs = {
+      # this looks kinda weird with the inputs inside another inputs
       inherit inputs;
       inherit pkgs;
       inherit username;
