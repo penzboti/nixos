@@ -17,11 +17,12 @@
         mupen64plus-next
         mesen-s
         nestopia
-];
+      ];
     })
     dolphin-emu
   ];
+
   programs = {
     steam.enable = true;
-  }
+  };
 }

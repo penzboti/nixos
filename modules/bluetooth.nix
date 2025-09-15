@@ -4,6 +4,7 @@
   ...
 }: {
   # bluetooth setup for audio
+  # QUESTION: does this error when i dont have audio?
   services.pipewire.wireplumber.extraConfig = {
     bluetoothEnhancements = {
       "monitor.bluez.properties" = {
@@ -18,6 +19,7 @@
       "bluetooth.autoswitch-to-headset-profile" = false;
     };
   };
+
   hardware.bluetooth = {
     enable = true;
     settings.General.Experimental = true;
@@ -27,6 +29,6 @@
   # battery life enhancement
   services.tlp = {
     enable = true;
-    settings.RESTORE_DEVICE_STATE_ON_STARTUP=1
+    settings.RESTORE_DEVICE_STATE_ON_STARTUP=1;
   };
 }

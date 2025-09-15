@@ -4,13 +4,8 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # game
-    godot
-    libresprite # aseprite
+    godot # game engine
+    libresprite # aseprite but libre
     ldtk # level editing toolkit
-
-    # video (might separate from here)
-    obs-studio # 
-    shotcut # a cross platform video editor; would prob be too large
   ];
 }

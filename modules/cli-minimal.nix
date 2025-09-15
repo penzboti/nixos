@@ -9,6 +9,7 @@
     fastfetch
     gh
   ];
+
   programs = {
     git.enable = true;
   };

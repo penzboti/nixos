@@ -9,6 +9,11 @@
     embeddedTheme = "black_hole";
   };
 in {
+
+  environment.systemPackages = [ sddm-astronaut ];
+
+  systemd.services.display-manager.enable = true;
+
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm; # qt6 sddm version
@@ -18,7 +23,4 @@ in {
 
     wayland.enable = true;
   };
-
-  environment.systemPackages = [sddm-astronaut];
-  systemd.services.display-manager.enable = true;
 }

@@ -13,6 +13,7 @@
     udiskie # automount external storage devices TODO: need hyprland start
     kitty # needed for hyprland
   ];
+
   programs = {
     hyprland.enable = true;
   };
