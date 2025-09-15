@@ -18,13 +18,11 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      # system = "x86_64-linux";
-      # system = system;
       config.allowUnfree = true;
       allowUnfree = true;
       config.permittedInsecurePackages = [
@@ -39,7 +37,7 @@
       };
       modules = [
         ./configuration.nix
-        # inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
         ./modules/spicetify.nix
         ./modules/sddm.nix
       ];

@@ -143,8 +143,7 @@
     inputs.zen-browser.packages."${system}".default
     gfn-electron
     itch
-    legendary-gl
-    heroic-unwrapped
+    heroic-unwrapped # EGS games # use latest proton; install it in-app
     # NOTE: hyprland system
     rofi
     waybar
@@ -161,7 +160,6 @@
     kanagawa-gtk-theme
     kanagawa-icon-theme
     bibata-cursors # it apears in gnome tweaks
-    libreoffice-qt6-fresh
     # system utilities
     zip
     unzip
@@ -185,6 +183,7 @@
     networkmanagerapplet # wifi gui interface; in system tray, which sounds meh
     uutils-coreutils-noprefix # faster coreutils; idk if it works
     presenterm #!! untested
+    btop # dashboard
     # NOTE: shells & stuff
     ghostty
     kitty
@@ -194,8 +193,8 @@
     # NOTE: ide / text editor stuff
     neovim
     # helix (build from source since i need plugins)
-    steel
     # (builtins.getFlake "github:helix-editor/helix").packages.${pkgs.system}.default # i would imagine this is helix master branch !! untested
+    steel # (but now some plugins dont even work)
     yazi # terminal file editor
     ripgrep
     nodePackages_latest.live-server
@@ -213,16 +212,18 @@
     # ldtk # too big
     # discordo # could also be cool
     # notion-app-enhanced # doesnt work
-    # zed-editor # don't need bc of nvim
+    # zed-editor # don't need bc of nvim (and hx)
     # vlc # might not need it bc of qimgv (in testing phase currently)
     # wiki-tui # if you need it, -p it
-    # ncspot # terminal spotify client, which does not work with free accounts
+    (ncspot.override { withCover = true; }) # terminal spotify client, which does not work with free accounts
+    ueberzugpp # for cover feature in ncspot
     # zellij # instead of tmux, but i never used either of them yet
     # rainbowstream # twitter client loool (i would maybe get addicted)
     # nushell # a shell that i didn't try yet
     # fselect # select files with sql syntax; statistically im not gonna use it
     # dua # storage tool; statistically im not gonna use it
     # shotcut # a cross platform video editor; would prob be too large
+    # libreoffice-qt6-fresh # FOSS office tools
   ];
 
   programs = {
