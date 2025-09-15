@@ -1,6 +1,7 @@
 {
   lib,
   username,
+  pkgs,
   ...
 }: {
 
@@ -46,11 +47,16 @@
 
   time.timeZone = "Europe/Budapest";
 
-  console.useXkbConfig = true; # use xkb.options in tty.
+  console.useXkbConfig = true; # use xkb.options in tty
+  # this now adds a (bad looking) display manager (gui login)
+  # because this is x11
+  # but its the easiest way to set the keyboard layout (according to the wiki)
   services.xserver = {
     enable = true;
     xkb.layout = "hu";
   };
+  # disable all display managers by default
+  systemd.services.display-manager.enable = lib.mkDefault false;
 
   i18n.defaultLocale = "en_GB.UTF-8";
   # idk what this does

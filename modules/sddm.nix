@@ -20,4 +20,5 @@ in {
   };
 
   environment.systemPackages = [sddm-astronaut];
+  systemd.services.display-manager.enable = true;
 }
