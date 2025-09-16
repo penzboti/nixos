@@ -1,7 +1,4 @@
 {
-  # from https://github.com/vimjoyer/flake-starter-config
-  description = "Nixos config flake";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -18,18 +15,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      # system = "x86_64-linux";
-      # system = system;
-      config.allowUnfree = true;
       allowUnfree = true;
-      config.permittedInsecurePackages = [
-        "dotnet-sdk-6.0.428"
-      ];
     };
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {

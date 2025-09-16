@@ -255,10 +255,6 @@
   fonts.fontDir.enable = true;
 
   environment = {
-    sessionVariables = { # NOTE: doesn't need system relog; regular variables do.
-      DOTNET_ROOT = "${pkgs.dotnet-sdk_6}/share/dotnet/"; # https://www.reddit.com/r/NixOS/comments/15j1283/is_it_possible_to_add_shellaliases_if_package_is/
-    };
-
     shellAliases = {
       # system
       shut = "shutdown -h now";
@@ -277,8 +273,6 @@
       optimise_verbose = "nix-store --optimise -vv";
       optimise = "nix store optimise";
       # programs
-      dashboard = "nix-shell -p btop --run btop"; # kinda unnecessary and i didn't even use it once.
-      tek = "/home/penzboti/manual/tek";
       firewall = "/home/penzboti/scripts/firewall.sh"; # mostly for pico park lol
       hotspot = "nix-shell -p linux-wifi-hotspot --run 'nmcli r wifi off; rfkill unblock wlan; wihotspot-gui; nmcli r wifi on'"; # mostly for pico park lol
       hx = "/home/penzboti/.cargo/bin/hx";

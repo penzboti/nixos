@@ -1,3 +1,6 @@
+# info
+initial flake config from https://github.com/vimjoyer/flake-starter-config
+
 # todo
 - full nix-flake setup per machine
 https://www.reddit.com/r/NixOS/comments/16zs4sn/git_is_making_hardwareconfigurationnix_invisible/
