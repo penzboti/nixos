@@ -33,17 +33,14 @@
       ];
     };
     specialArgs = {
-      # this looks kinda weird with the inputs inside another inputs
-      inherit inputs;
       inherit pkgs;
       inherit username;
-    };
+    } // inputs;
   in {
     nixosConfigurations = {
       # school-issued laptop (original)
       school = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
-        inherit inputs; # might not solve zen-browser not appearing
         modules = [
           ./hosts/school
           home-manager.nixosModules.home-manager {

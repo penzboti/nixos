@@ -1,13 +1,11 @@
 {
   config,
   pkgs,
-  # inputs,
   zen-browser,
-  system,
   ...
 }: {
   environment.systemPackages = [
-    zen-browser.packages."${system}".default # untested
+    zen-browser.packages."${pkgs.system}".default
     # firefoxpwa # its not revealed, but installed (into firefox)
   ];
 
@@ -20,13 +18,14 @@
   };
 
   # open markdown files using the ```xdg-open file``` command
+  # it should be zen-beta, while zen stays beta.
   xdg.mime = {
     enable = true;
     defaultApplications = {
-      "text/markdown" = ["zen.desktop" "firefox.desktop"];
+      "text/markdown" = ["zen-beta.desktop" "firefox.desktop"];
     };
     addedAssociations = {
-      "text/markdown" = ["zen.desktop" "firefox.desktop"];
+      "text/markdown" = ["zen-beta.desktop" "firefox.desktop"];
     };
   };
 }
