@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -30,7 +30,7 @@
       };
       modules = [
         ./configuration.nix
-        # inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
         ./modules/spicetify.nix
         ./modules/sddm.nix
       ];
