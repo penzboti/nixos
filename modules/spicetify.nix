@@ -8,7 +8,6 @@ in
 
   programs.spicetify = {
     enable = true;
-    # spicetifyPackage = inputs.nixpkgs.legacyPackages."${pkgs.system}".spicetify-cli;
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts
