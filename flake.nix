@@ -43,6 +43,7 @@
       # school-issued laptop (original)
       school = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
+        inherit inputs; # might not solve zen-browser not appearing
         modules = [
           ./hosts/school
           home-manager.nixosModules.home-manager {

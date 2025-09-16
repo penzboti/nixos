@@ -6,6 +6,8 @@
   environment.systemPackages = with pkgs; [
     helix
 
+    # steel # it would be better to have built it from source; (just like helix; for extensions)
+
     # language servers
     rust-analyzer
     typescript-language-server

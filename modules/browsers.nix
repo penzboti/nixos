@@ -1,11 +1,13 @@
 {
   config,
   pkgs,
-  inputs,
+  # inputs,
+  zen-browser,
+  system,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    inputs.zen-browser.packages."${system}".default
+  environment.systemPackages = [
+    zen-browser.packages."${system}".default # untested
     # firefoxpwa # its not revealed, but installed (into firefox)
   ];
 

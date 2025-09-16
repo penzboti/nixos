@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  programs.fish.enable = true;
   environment.systemPackages = with pkgs; [
     yazi # terminal file editor
     ncspot # terminal spotify client
@@ -14,4 +13,6 @@
     fzf # find files also
     uutils-coreutils-noprefix # faster coreutils; idk if it works
   ];
+
+  programs.fish.enable = true;
 }
