@@ -29,6 +29,14 @@
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
+  # automatic garbage collection when less than 100 mb remaining
+  # i might be able to use '100M' instead of bye number
+  nix.extraOptions = ''
+    min-free = ${toString (100 * 1024 * 1024)}
+    max-free = ${toString (1024 * 1024 * 1024)}
+  '';
+
+
   networking.networkmanager.enable = true;
   powerManagement.enable = true; # QUESTION: separate file for power management?
 
