@@ -2,7 +2,15 @@
   config,
   pkgs,
   ...
-}: {
+}:
+  let retroarchCores = (pkgs.retroarch.withCores (cores: with cores; [
+    # mupen64plus-next
+    mupen64plus
+    mesen-s
+    nestopia
+  ]));
+  in
+{
   environment.systemPackages = with pkgs; [
     # official launcher
     itch
@@ -12,13 +20,7 @@
     # streaming
     gfn-electron
     # emulators
-    (retroarch.override {
-      cores = with libretro; [
-        mupen64plus-next
-        mesen-s
-        nestopia
-      ];
-    })
+    retroarchCores
     dolphin-emu
   ];
 
