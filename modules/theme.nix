@@ -12,7 +12,7 @@
     bibata-cursors
 
     # theme installers
-    oh-my-posh # for bash
-    oh-my-fish # for fish (i think i can rule this out tho atp)
+    oh-my-posh # for bash, needed
+    # oh-my-fish # for fish, not needed
   ];
 }

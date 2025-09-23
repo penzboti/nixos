@@ -4,16 +4,16 @@
   zen-browser,
   ...
 }: {
-  environment.systemPackages = [
-    zen-browser.packages."${pkgs.system}".default
-    # firefoxpwa # its not revealed, but installed (into firefox)
+  environment.systemPackages = with pkgs; [
+    zen-browser.packages."${system}".default
+    firefoxpwa # i need it revelaed
   ];
 
   programs = {
     firefox = {
       enable = true;
       package = pkgs.firefox;
-      nativeMessagingHosts.packages = [ pkgs.firefoxpwa ]; # pwa
+      nativeMessagingHosts.packages = [ pkgs.firefoxpwa ]; # its not revealed here
     };
   };
 

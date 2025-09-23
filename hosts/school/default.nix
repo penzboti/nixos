@@ -7,13 +7,13 @@
     ./hardware-configuration.nix
 
     ../../bundles/essentials.nix
+    ../../bundles/cli.nix
     ../../bundles/desktop.nix
     ../../bundles/hardware.nix
 
     ../../modules/spicetify.nix
     ../../modules/games.nix
     ../../modules/theme.nix
-    ../../modules/browsers.nix
   ];
 
   # boot loader
@@ -23,7 +23,7 @@
   # trackpad
   hardware.trackpoint.emulateWheel = true;
   services.libinput.mouse.accelSpeed = "0.0";
-  services.libinput.mouse.disableWhileTyping = true;
+  # services.libinput.mouse.disableWhileTyping = true; # have a script for disabling touchpad
   services.libinput.touchpad.sendEventsMode = "disabled-on-external-mouse";
 
   environment = {

@@ -12,6 +12,7 @@
     fd # find files
     fzf # find files also
     uutils-coreutils-noprefix # faster coreutils; idk if it works
+    btop # dashboard
   ];
 
   programs.fish.enable = true;
