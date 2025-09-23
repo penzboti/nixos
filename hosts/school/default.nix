@@ -14,6 +14,7 @@
     ../../modules/spicetify.nix
     ../../modules/games.nix
     ../../modules/theme.nix
+    ../../modules/applications.nix
   ];
 
   # boot loader
