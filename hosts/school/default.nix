@@ -15,6 +15,7 @@
     ../../modules/games.nix
     ../../modules/theme.nix
     ../../modules/applications.nix
+    # ../../modules/gamedev.nix
   ];
 
   # boot loader
@@ -24,8 +25,9 @@
   # trackpad
   hardware.trackpoint.emulateWheel = true;
   services.libinput.mouse.accelSpeed = "0.0";
-  # services.libinput.mouse.disableWhileTyping = true; # have a script for disabling touchpad
+  services.libinput.mouse.disableWhileTyping = false; # i have a script for disabling touchpad; sadly, it still does it
   services.libinput.touchpad.sendEventsMode = "disabled-on-external-mouse";
+  # services.logind.lidSwitch = "ignore"; # ignore lid closing as an action
 
   environment = {
     shellAliases = {

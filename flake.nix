@@ -29,7 +29,7 @@
       config.allowUnfree = true;
       allowUnfree = true;
       config.permittedInsecurePackages = [
-        "dotnet-sdk-6.0.428"
+        "electron-35.7.5"
       ];
     };
     specialArgs = {

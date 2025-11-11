@@ -14,5 +14,6 @@
     markdown-oxide
     nixd
     python313Packages.jedi-language-server
+    simple-completion-language-server
   ];
 }
