@@ -13,15 +13,19 @@
 {
   environment.systemPackages = with pkgs; [
     # official launcher
-    itch
+    # itch
+    prismlauncher
+
     # unofficial launcher
-    heroic-unwrapped
-    legendary-gl
+    # heroic-unwrapped
+    # legendary-gl
+
     # streaming
     # gfn-electron # apparently it got removed; hoping this still works in firefox web view
+
     # emulators
-    retroarchCores
-    dolphin-emu
+    # retroarchCores
+    # dolphin-emu
   ];
 
   programs = {

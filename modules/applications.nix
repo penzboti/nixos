@@ -7,6 +7,8 @@
     discord
     betterdiscordctl
 
+    spotify # if spicetify is not needed
+
     obsidian
   ];
 }

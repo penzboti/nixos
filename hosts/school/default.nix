@@ -11,7 +11,7 @@
     ../../bundles/desktop.nix
     ../../bundles/hardware.nix
 
-    ../../modules/spicetify.nix
+    # ../../modules/spicetify.nix # got spotify premium, unneeded currently
     ../../modules/games.nix
     ../../modules/theme.nix
     ../../modules/applications.nix
