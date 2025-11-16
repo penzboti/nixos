@@ -18,7 +18,7 @@
     heroic-unwrapped
     legendary-gl
     # streaming
-    gfn-electron
+    # gfn-electron # apparently it got removed; hoping this still works in firefox web view
     # emulators
     retroarchCores
     dolphin-emu

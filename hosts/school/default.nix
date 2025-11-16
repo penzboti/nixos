@@ -15,6 +15,7 @@
     ../../modules/games.nix
     ../../modules/theme.nix
     ../../modules/applications.nix
+    ../../modules/class.nix
     # ../../modules/gamedev.nix
   ];
 
