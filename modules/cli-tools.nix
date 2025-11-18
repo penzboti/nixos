@@ -5,7 +5,8 @@
 }: {
   environment.systemPackages = with pkgs; [
     yazi # terminal file editor
-    ncspot # terminal spotify client
+    (ncspot.override { withCover = true; }) # terminal spotify client
+    ueberzugpp # for ncspot cover feature
     gitui
     ripgrep
     ripgrep-all

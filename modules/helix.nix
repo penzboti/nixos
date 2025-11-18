@@ -13,6 +13,7 @@
     typescript-language-server
     markdown-oxide
     nixd
+    nixfmt
     python313Packages.jedi-language-server
     simple-completion-language-server
   ];
