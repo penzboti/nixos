@@ -1,7 +1,7 @@
 # https://github.com/Gerg-L/spicetify-nix
 { pkgs, spicetify-nix, ... }:
 let
-   spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+   spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   imports = [ spicetify-nix.nixosModules.default ];

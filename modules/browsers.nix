@@ -5,7 +5,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    zen-browser.packages."${system}".default
+    zen-browser.packages."${stdenv.hostPlatform.system}".default
     firefoxpwa # i need it revelaed
   ];
 

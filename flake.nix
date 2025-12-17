@@ -16,6 +16,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; # currently it doesn't work
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -24,13 +29,8 @@
     username = "penzboti";
     pkgs = import nixpkgs {
       inherit system;
-      # system = "x86_64-linux";
-      # system = system;
       config.allowUnfree = true;
       allowUnfree = true;
-      config.permittedInsecurePackages = [
-        "electron-35.7.5"
-      ];
     };
     specialArgs = {
       inherit pkgs;

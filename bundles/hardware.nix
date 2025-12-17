@@ -9,6 +9,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    udiskie # automount external storage devices TODO: need hyprland start
-   ];
+    udiskie # automount external storage devices
+  ];
+
+  services.udisks2.enable = true; # for udiskie
 }
