@@ -7,6 +7,7 @@
     inkscape
     gimp
     # libreoffice-qt6-fresh
+
     # c# devenv I CANT DEAL WITH
     # just write python code ig
   ];

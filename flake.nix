@@ -18,9 +18,9 @@
     };
 
     silentSDDM = {
-      url = "github:uiriansan/SilentSDDM?ref=pull/72/head";
+      url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
-    }; # currently it doesn't work
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -38,6 +38,7 @@
     } // inputs;
   in {
     nixosConfigurations = {
+
       # school-issued laptop (original)
       school = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
@@ -52,6 +53,7 @@
           }
         ];
       };
+
       # virtual machine
       vm = nixpkgs.lib.nixosSystem {
         inherit specialArgs;

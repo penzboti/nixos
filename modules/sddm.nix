@@ -21,6 +21,8 @@ let
       cp -r . $out/
     '';
   };
+  col = "#910106";
+  # col = "#ffcfce"; # original color
 in
 {
   imports = [silentSDDM.nixosModules.default];
@@ -34,16 +36,32 @@ in
      penzboti = "${dv}/pfp.jpg";
     };
     settings = {
-      # TODO: change the colors to better suit the shitty laptop display :)
-      "LoginScreen.LoginArea.Avatar" = {
-        shape = "square";
-        # active-border-color = "#ffcfce";
+      "LockScreen" = {
+        background = "wallpaper_2.jpg";
+      };
+      "LockScreen.Clock" = {
+        color = col;
+      };
+      "LockScreen.Date" = {
+        color = col;
       };
       "LoginScreen" = {
         background = "wallpaper_2.jpg";
       };
-      "LockScreen" = {
-        background = "wallpaper_2.jpg";
+      "LoginScreen.LoginArea.Avatar" = {
+        shape = "square";
+        active-border-color = col;
+      };
+      "LoginScreen.LoginArea.Username" = {
+        color = col;
+      };
+      "LoginScreen.LoginArea.PasswordInput" = {
+        background-color = col;
+        border-color = col;
+        content-color = col;
+      };
+      "LoginScreen.LoginArea.Spinner" = {
+        color = col;
       };
     };
   };
