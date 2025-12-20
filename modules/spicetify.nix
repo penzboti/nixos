@@ -1,10 +1,10 @@
 # https://github.com/Gerg-L/spicetify-nix
-{ pkgs, inputs, ... }:
+{ pkgs, spicetify-nix, ... }:
 let
-   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+   spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
-  imports = [inputs.spicetify-nix.nixosModules.default];
+  imports = [ spicetify-nix.nixosModules.default ];
 
   programs.spicetify = {
     enable = true;
