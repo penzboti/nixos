@@ -16,5 +16,6 @@
     nixfmt
     python313Packages.jedi-language-server
     simple-completion-language-server
+    vscode-json-languageserver
   ];
 }

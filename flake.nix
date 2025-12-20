@@ -18,7 +18,7 @@
     };
 
     silentSDDM = {
-      url = "github:uiriansan/SilentSDDM";
+      url = "github:uiriansan/SilentSDDM?ref=pull/72/head";
       inputs.nixpkgs.follows = "nixpkgs";
     }; # currently it doesn't work
   };
