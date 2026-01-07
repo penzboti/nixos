@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -16,4 +15,10 @@
       vimAlias = true;
     };
   };
+
+  # maybe lazyvim works
+  environment.systemPackages = with pkgs; [
+    # vimPlugins.LazyVim # doesn't seem to do anything here
+    lunarvim
+  ];
 }

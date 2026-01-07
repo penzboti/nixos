@@ -1,11 +1,12 @@
 {
-  config,
   pkgs,
   zen-browser,
+  helium,
   ...
 }: {
   environment.systemPackages = with pkgs; [
     zen-browser.packages."${stdenv.hostPlatform.system}".default
+    helium.packages."${stdenv.hostPlatform.system}".default
     firefoxpwa # i need it revelaed
   ];
 
