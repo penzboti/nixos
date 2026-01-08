@@ -12,9 +12,9 @@
     bat # cat with syntax highlighting
     wget # needed for sg idk
     nushell
+    discordo
     # wiki-tui # if you need it, -p it
     # zellij # instead of tmux, but i never used either of them yet
-    rainbowstream # twitter client loool (i would maybe get addicted)
     # ondedrive or onedriver ### side note: google drive doesn't really have a good option
   ];
 }

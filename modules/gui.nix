@@ -10,6 +10,7 @@
     xfce.thunar # file manager
     gnome-tweaks # set thunar theme and mouse cursor theme
     webcamoid # camera app
-    ghostty
+    ghostty # terminal emulator
+    qalculate-gtk # calculator app
   ];
 }
