@@ -14,7 +14,11 @@
   environment.systemPackages = with pkgs; [
     # official launcher
     # itch
+
+    # minecraft
     prismlauncher
+    waywall # speedrunning
+    jdk # running jar files for speedrunning
 
     # unofficial launcher
     # heroic-unwrapped

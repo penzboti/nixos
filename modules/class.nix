@@ -4,9 +4,11 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    inkscape
-    gimp
-    # libreoffice-qt6-fresh
+    inkscape # vector graphics
+    gimp # pixel graphics
+    xournalpp # drawing & note taking
+
+    # libreoffice-qt6-fresh # ms office
 
     # c# devenv I CANT DEAL WITH
     # just write python code ig
