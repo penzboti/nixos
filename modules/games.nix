@@ -16,7 +16,7 @@
     # itch
 
     # minecraft
-    prismlauncher
+    (prismlauncher.override { additionalLibs = with pkgs; [ libxtst libxkbcommon libxt ]; }) # speedrunning works now
     waywall # speedrunning
     jdk # running jar files for speedrunning
 
