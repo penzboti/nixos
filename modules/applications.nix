@@ -7,8 +7,13 @@
     discord
     betterdiscordctl
 
-    spotify # if spicetify is not needed
+    spotify # note: spicetify is a spotify client in the terminal
+
+    whatsapp-electron
 
     obsidian
+
+    # qbittorrent-enhanced
+    # protonvpn-gui
   ];
 }

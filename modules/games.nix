@@ -19,6 +19,7 @@
     (prismlauncher.override { additionalLibs = with pkgs; [ libxtst libxkbcommon libxt ]; }) # speedrunning works now
     waywall # speedrunning
     jdk # running jar files for speedrunning
+    # logmein-hamachi # open-to-lan private server
 
     # unofficial launcher
     # heroic-unwrapped

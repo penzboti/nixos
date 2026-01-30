@@ -7,8 +7,9 @@ made with https://nixos-and-flakes.thiscute.world/ and https://github.com/ryan4y
 [new-system.md](./docs/new-system.md)
 
 # todo
-- home-manager setup? (& nix develop);
-### side note
+- organize applications better
+
+# side note
 i put all the .config files into a separate repo;
 this is good for cross-platform apps to sync between windows/linux;
 but also good if i switch off of nixos + i don't have to rewrite them in home manager
