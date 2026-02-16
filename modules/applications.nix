@@ -13,6 +13,9 @@
 
     obsidian
 
+    razergenie # razer peripherals companion app
+    # note: needs the other razer app it seems like
+
     # qbittorrent-enhanced
     # protonvpn-gui
   ];

@@ -87,5 +87,4 @@
     LC_TELEPHONE = "hu_HU.UTF-8";
     LC_TIME = "hu_HU.UTF-8";
   };
-
 }

@@ -16,6 +16,8 @@
     ../../modules/theme.nix
     ../../modules/applications.nix
     ../../modules/class.nix
+    ../../modules/flatpak.nix
+    ../../modules/wine.nix
     # ../../modules/gamedev.nix
   ];
 
@@ -29,7 +31,11 @@
   services.libinput.mouse.accelSpeed = "0.0";
   # services.libinput.mouse.disableWhileTyping = false; # this is def takeon over by hyprland
   services.libinput.touchpad.sendEventsMode = "disabled-on-external-mouse";
-  # services.logind.lidSwitch = "ignore"; # ignore lid closing as an action
+
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+    # HandleLidSwitch = "ignore";
+  };
 
   environment = {
     shellAliases = {
