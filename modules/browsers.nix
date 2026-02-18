@@ -5,9 +5,10 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    zen-browser.packages."${stdenv.hostPlatform.system}".default
-    helium.packages."${stdenv.hostPlatform.system}".default
     firefoxpwa # i need it revelaed
+
+    zen-browser.packages."${stdenv.hostPlatform.system}".default
+    # helium.packages."${stdenv.hostPlatform.system}".default # aren't using it rn
   ];
 
   programs = {

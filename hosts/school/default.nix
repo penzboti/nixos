@@ -14,7 +14,8 @@
     # ../../modules/spicetify.nix # got spotify premium, unneeded currently
     ../../modules/games.nix
     ../../modules/theme.nix
-    ../../modules/applications.nix
+    ../../modules/communication.nix
+    ../../modules/spotify.nix
     ../../modules/class.nix
     ../../modules/flatpak.nix
     ../../modules/wine.nix
@@ -25,15 +26,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # trackpad
-  # probably taken over entirely by hyprland
-  hardware.trackpoint.emulateWheel = true;
-  services.libinput.mouse.accelSpeed = "0.0";
-  # services.libinput.mouse.disableWhileTyping = false; # this is def takeon over by hyprland
-  services.libinput.touchpad.sendEventsMode = "disabled-on-external-mouse";
-
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";
+    # HandlePowerKeyLongPress = "poweroff"; # handled by the HW, this is never achieved
     # HandleLidSwitch = "ignore";
   };
 

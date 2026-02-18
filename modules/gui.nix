@@ -5,13 +5,14 @@
 }: {
   environment.systemPackages = with pkgs; [
     qimgv # media viewer
-    # vlc # might not need it bc of qimgv
+    vlc # better video experience than qimgv
     swaynotificationcenter
     thunar # file manager
     gnome-tweaks # set thunar theme and mouse cursor theme
     webcamoid # camera app
     ghostty # terminal emulator
     qalculate-gtk # calculator app
+    # no clock app / alarm app
   ];
 
   # set default applications
@@ -20,12 +21,21 @@
       enable = true;
       settings.default = ["ghostty.desktop"];
     };
-    mime = {
+    mime = let
+      image = "qimgv.desktop";
+      video = "vlc.desktop";
+      filemanager = "thunar.desktop";
+    in {
+      enable = true;
       defaultApplications = {
-        "inode/directory" = "dolphin.desktop";
+        "inode/directory" = filemanager;
+        "image/*" = image;
+        "video/*" = video;
       };
       addedAssociations = {
-        "inode/directory" = "dolphin.desktop";
+        "inode/directory" = filemanager;
+        "image/*" = image;
+        "video/*" = video;
       };     
     };
   };

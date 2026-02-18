@@ -7,7 +7,8 @@ made with https://nixos-and-flakes.thiscute.world/ and https://github.com/ryan4y
 [new-system.md](./docs/new-system.md)
 
 # todo
-- organize applications better
+- look into applying gtk theme and cursor theme in nix
+- a clock / alarm app
 
 # side note
 i put all the .config files into a separate repo;

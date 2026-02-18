@@ -3,18 +3,21 @@
   pkgs,
   ...
 }: {
+  # modules/office for libreoffice
+
   environment.systemPackages = with pkgs; [
+    obsidian # note taking
+    xournalpp # drawing & hand-written note taking
+
+    # it class
     inkscape # vector graphics
     gimp # pixel graphics
-    xournalpp # drawing & note taking
-
-    # libreoffice-qt6-fresh # ms office
 
     # c# devenv I CANT DEAL WITH
     # just write python code ig
   ];
 
-  # might be close to xampp
+  # mariadb server
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;

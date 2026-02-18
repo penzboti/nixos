@@ -6,6 +6,7 @@
   imports = [
     ../modules/audio.nix
     ../modules/bluetooth.nix
+    ../modules/peripherals.nix
   ];
 
   environment.systemPackages = with pkgs; [

@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-
   # NIXOS
   # later on, separate the options i wouldn't be able to use in macos or ubuntu
  
@@ -14,7 +13,6 @@
     isNormalUser = true;
     home = "/home/${username}";
     description = username;
-    # hoping it doesn't cry if it does not recognize groups (when we dont configure audio or video)
     extraGroups = ["wheel" "networkmanager" "audio" "video"];
   };
 
@@ -35,7 +33,6 @@
     min-free = ${toString (100 * 1024 * 1024)}
     max-free = ${toString (1024 * 1024 * 1024)}
   '';
-
 
   networking.networkmanager.enable = true;
   powerManagement.enable = true; # QUESTION: separate file for power management?
