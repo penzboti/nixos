@@ -67,6 +67,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "hu";
+    excludePackages = [ pkgs.xterm ];
   };
   # disable all display managers by default
   systemd.services.display-manager.enable = lib.mkDefault false;

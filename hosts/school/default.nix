@@ -13,7 +13,6 @@
 
     # ../../modules/spicetify.nix # got spotify premium, unneeded currently
     ../../modules/games.nix
-    ../../modules/theme.nix
     ../../modules/communication.nix
     ../../modules/spotify.nix
     ../../modules/class.nix

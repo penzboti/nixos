@@ -15,7 +15,7 @@
     discordo # terminal discord client
     pom # pomodoro timer
     yt-dlp # download youtube videos
-    mpv # why not
+    celluloid # better mpv
     youtube-tui # why not
     # wiki-tui # if you need it, -p it
     # zellij # instead of tmux, but i never used either of them yet

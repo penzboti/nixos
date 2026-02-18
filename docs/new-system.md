@@ -8,11 +8,14 @@ programs.git.enable = true;
 ```
 
 # post prebuild
-you shouldn't need this:
-- nix run home-manager/master
 ```sh
 cd ~
 git clone https://github.com/penzboti/nixos.git
+```
+also add home-manager
+```sh
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+sudo nix-channel --update
 ```
 
 # build a new configuration.
@@ -25,7 +28,3 @@ copy over from current configuration to the corresponding host folder:
 ```sh
 sudo nixos-rebuild switch --flake ~/nixos.#<system>
 ```
-
-# TODO 
-home-manager
-

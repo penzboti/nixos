@@ -8,7 +8,6 @@
     vlc # better video experience than qimgv
     swaynotificationcenter
     thunar # file manager
-    gnome-tweaks # set thunar theme and mouse cursor theme
     webcamoid # camera app
     ghostty # terminal emulator
     qalculate-gtk # calculator app
