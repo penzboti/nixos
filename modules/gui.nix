@@ -11,6 +11,8 @@
     webcamoid # camera app
     ghostty # terminal emulator
     qalculate-gtk # calculator app
+    resonance # music player
+    lunatask # good task app
     # no clock app / alarm app
   ];
 

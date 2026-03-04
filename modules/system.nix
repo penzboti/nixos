@@ -8,6 +8,10 @@
   # later on, separate the options i wouldn't be able to use in macos or ubuntu
  
   programs.nix-ld.enable = true; # run precompiled binaries on nix
+  programs.appimage = { # run appimage files
+    binfmt = true;
+    enable = true;
+  };
 
   users.users.${username}= {
     isNormalUser = true;

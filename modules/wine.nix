@@ -5,7 +5,8 @@
 }:
 {
   environment.systemPackages = with pkgs; [
-    wine-wayland
-    # the app is installed, but can't try if it fully works since i dont have .exe files
+    wineWowPackages.wayland
+    # this package prob works, it just takes ages to build
+    # don't use it unless you want multiple hour bulid times
   ];
 }

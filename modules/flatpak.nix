@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    # "${nix-flatpak}/modules/nixos.nix" # aren't using it rn
+    "${nix-flatpak}/modules/nixos.nix" # aren't using it rn
   ];
 
   # installs during an activation phase: makes that phase take long
@@ -17,6 +17,8 @@
 
   services.flatpak = {
     enable = true;
-    # packages = [];
+    packages = [
+      "io.github.astralvixen.geforce-infinity"
+    ];
   };
 }

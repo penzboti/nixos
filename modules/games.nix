@@ -2,15 +2,15 @@
   config,
   pkgs,
   ...
-}:
-  let retroarchCores = (pkgs.retroarch.withCores (cores: with cores; [
-    # mupen64plus-next
-    mupen64plus
-    mesen-s
-    nestopia
+}: let
+  retroarchCores = (pkgs.retroarch.withCores (cores: with cores; [
+    mupen64plus # n64
+    mesen-s # snes & gameboy/color
+    nestopia # nes
+    melonds # ds
+    citra # 3ds
   ]));
-  in
-{
+in {
   environment.systemPackages = with pkgs; [
     # official launcher
     # itch
@@ -25,12 +25,10 @@
     # heroic-unwrapped
     # legendary-gl
 
-    # streaming
-    # gfn-electron # apparently it got removed; hoping this still works in firefox web view
-
     # emulators
-    # retroarchCores
-    # dolphin-emu
+    # retroarchCores # see up top
+    # dolphin-emu # gamecube & wii
+    # ryubing # switch
   ];
 
   programs = {
