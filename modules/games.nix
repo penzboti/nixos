@@ -26,7 +26,7 @@ in {
     # legendary-gl
 
     # emulators
-    # retroarchCores # see up top
+    retroarchCores # see up top
     # dolphin-emu # gamecube & wii
     # ryubing # switch
   ];

@@ -16,9 +16,10 @@
     };
   };
 
-  # maybe lazyvim works
-  environment.systemPackages = with pkgs; [
-    # vimPlugins.LazyVim # doesn't seem to do anything here
-    lunarvim
-  ];
+  # no standalone package for lazyvim
+  # lunarvim was brokenated
+  # could check out nixvim (flake), but not right now
+
+  # environment.systemPackages = with pkgs; [
+  # ];
 }

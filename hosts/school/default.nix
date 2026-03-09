@@ -17,7 +17,7 @@
     ../../modules/spotify.nix
     ../../modules/class.nix
     ../../modules/flatpak.nix
-    # ../../modules/wine.nix
+    ../../modules/wine.nix
     ../../modules/gamedev.nix
   ];
 

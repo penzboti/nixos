@@ -41,7 +41,7 @@
   networking.networkmanager.enable = true;
   powerManagement.enable = true; # QUESTION: separate file for power management?
 
-  programs.light.enable = true;
+  environment.systemPackages = with pkgs; [ brightnessctl ];
   services.upower.enable = true;
 
   fonts.packages = with pkgs; [
