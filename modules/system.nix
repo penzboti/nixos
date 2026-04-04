@@ -9,7 +9,7 @@
  
   programs.nix-ld.enable = true; # run precompiled binaries on nix
   programs.appimage = { # run appimage files
-    binfmt = true;
+    # binfmt = true;
     enable = true;
   };
 

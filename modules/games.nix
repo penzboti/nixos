@@ -22,7 +22,7 @@ in {
     # logmein-hamachi # open-to-lan private server
 
     # unofficial launcher
-    # heroic-unwrapped
+    heroic-unwrapped
     # legendary-gl
 
     # decompiled games

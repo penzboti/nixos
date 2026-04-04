@@ -8,6 +8,7 @@
     vlc # better video experience than qimgv
     swaynotificationcenter
     thunar # file manager
+    gvfs thunar-archive-plugin engrampa # thunar extras & "archive managing"
     webcamoid # camera app
     ghostty # terminal emulator
     qalculate-gtk # calculator app

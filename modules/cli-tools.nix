@@ -15,6 +15,7 @@
     fzf # find files also
     uutils-coreutils-noprefix # faster coreutils; idk if it works
     btop # dashboard
+    nethogs # because btop doesnt have program-based net util
   ];
 
   programs.fish.enable = true;
