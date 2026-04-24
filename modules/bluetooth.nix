@@ -4,15 +4,16 @@
   ...
 }: {
   # bluetooth setup for audio
-  # QUESTION: does this error when i dont have audio?
   services.pipewire.wireplumber.extraConfig = {
     bluetoothEnhancements = {
       "monitor.bluez.properties" = {
         "bluez5.enable-sbc-xq" = true;
         "bluez5.enable-hw-volume" = true;
         "bluez5.codecs" = [ "sbc" "sbc_xq" "aac" ]; # default includes all
-        # "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" ]; # default - (minus) hfp
-        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" "hfp_hf" "hfp_ag" "hsp_hs" "hsp_ag" ]; # default + hsp
+        # hsp
+        # "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" ]; # default - (minus) hfp (no calls)
+        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" "hfp_hf" "hfp_ag" "hsp_hs" "hsp_ag" ]; # default + hsp (doesnt work on some devices)
+        "bluez5.enable-msbc" = true; # some codec based on hsp/hfp
       };
     };
     "11-bluetooth-policy"."wireplumber.settings" = {

@@ -17,6 +17,7 @@
     yt-dlp # download youtube videos
     celluloid # better mpv
     youtube-tui # why not
+    p7zip
     # wiki-tui # if you need it, -p it
     # zellij # instead of tmux, but i never used either of them yet
     # ondedrive or onedriver ### side note: google drive doesn't really have a good option

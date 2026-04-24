@@ -16,6 +16,7 @@
     lunatask # good task app
     # no clock app / alarm app
     sioyek # pdf reader
+    easyeffects # microphone effects
   ];
 
   # set default applications
