@@ -9,7 +9,7 @@
     # this package prob works, it just takes ages to build
     # don't use it unless you want multiple hour bulid times
 
-    bottles # wine-prefix manager
+    (bottles.override {removeWarningPopup = true;}) # wine-prefix manager
     # it might let me use steam's proton (which is wine based)
   ];
 }
