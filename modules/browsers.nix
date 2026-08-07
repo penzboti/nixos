@@ -24,10 +24,10 @@
   xdg.mime = {
     enable = true;
     defaultApplications = {
-      "text/markdown" = ["zen-beta.desktop" "firefox.desktop"];
+      "text/markdown" = ["helium.desktop" "zen-beta.desktop" "firefox.desktop"];
     };
     addedAssociations = {
-      "text/markdown" = ["zen-beta.desktop" "firefox.desktop"];
+      "text/markdown" = ["helium.desktop" "zen-beta.desktop" "firefox.desktop"];
     };
   };
 }

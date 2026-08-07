@@ -14,6 +14,7 @@
     ../modules/video.nix
     ../modules/communication.nix
     ../modules/class.nix
+    ../modules/android.nix
   ];
 
   # CURRENTLY uncategorised / unneeded apps
