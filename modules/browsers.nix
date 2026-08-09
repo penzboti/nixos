@@ -8,7 +8,7 @@
     firefoxpwa # i need it revelaed
 
     zen-browser.packages."${stdenv.hostPlatform.system}".default
-    helium.packages."${stdenv.hostPlatform.system}".default
+    # helium.packages."${stdenv.hostPlatform.system}".default # file-select not working; its also unofficial
   ];
 
   programs = {

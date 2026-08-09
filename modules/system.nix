@@ -70,7 +70,11 @@
   # but its the easiest way to set the keyboard layout (according to the wiki)
   services.xserver = {
     enable = true;
-    xkb.layout = "hu";
+    xkb = {
+      layout = "hu,us";
+      variant = "";
+      options = "grp:win_space_toggle";
+    }; # note: hyprland takes over
     excludePackages = [ pkgs.xterm ];
   };
   # disable all display managers by default

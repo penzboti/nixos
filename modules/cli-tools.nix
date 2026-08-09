@@ -16,6 +16,7 @@
     uutils-coreutils-noprefix # faster coreutils; idk if it works
     btop # dashboard
     nethogs # because btop doesnt have program-based net util
+    jq # json processor
   ];
 
   programs.fish.enable = true;

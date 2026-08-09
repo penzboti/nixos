@@ -14,6 +14,7 @@
 
     ../../modules/flatpak.nix
     ../../modules/wine.nix
+    ../../modules/powermanagement.nix
   ];
 
   # boot loader
@@ -24,7 +25,15 @@
     shellAliases = {
       shut = "shutdown -h now";
       buildnix = "sudo nixos-rebuild switch --flake ~/nixos/#asusvivo"; 
+      space = "df -h | grep -E '/dev/nvme0n1p2|Filesystem'";
     };
+  };
+
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+    HandlePowerKeyLongPress = "ignore"; # handled by the HW, this is never achieved
+    HandleLidSwitch = "suspend";
+    # note: if sleep sucks, use hybernation https://nixos.wiki/wiki/Hibernation
   };
 
   system.stateVersion = "26.05"; # DO NOT CHANGE IN ANY CIRCUMSTANCE
