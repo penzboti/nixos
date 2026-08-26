@@ -7,8 +7,10 @@
   environment.systemPackages = with pkgs; [
     firefoxpwa # i need it revelaed
 
+    nyxt # keyboard based browser
+
     zen-browser.packages."${stdenv.hostPlatform.system}".default
-    # helium.packages."${stdenv.hostPlatform.system}".default # file-select not working; its also unofficial
+    helium.packages."${stdenv.hostPlatform.system}".default # file-select not working; its also unofficial
   ];
 
   programs = {

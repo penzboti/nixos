@@ -4,7 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    libreoffice-qt6-fresh
+    libreoffice-qt-stable
   ];
 
   # Enable CUPS to print documents.
