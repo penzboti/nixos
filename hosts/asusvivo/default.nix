@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  asix-usb-nic-linux-driver,
   ...
 }: {
   imports = [
@@ -21,6 +22,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.extraModulePackages = [
+    (config.boot.kernelPackages.callPackage ../../packages/ax-usb-nic {
+      inherit asix-usb-nic-linux-driver;
+    })
+  ];
   environment = {
     shellAliases = {
       shut = "shutdown -h now";

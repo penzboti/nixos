@@ -25,6 +25,11 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    asix-usb-nic-linux-driver = {
+      url = "github:ASIXElectronics/asix-usb-nic-linux-driver";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -37,8 +42,7 @@
       allowUnfree = true;
     };
     specialArgs = {
-      inherit pkgs;
-      inherit username;
+      inherit pkgs username;
     } // inputs;
   in {
     nixosConfigurations = {
