@@ -20,7 +20,7 @@
     };
 
     helium = {
-      url = "github:tomsch/helium-nix";
+      url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
