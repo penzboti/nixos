@@ -17,6 +17,7 @@
     ../modules/android.nix
     ../modules/soundwork.nix
     ../modules/vpn.nix
+    ../modules/uni.nix
   ];
 
   # CURRENTLY uncategorised / unneeded apps
