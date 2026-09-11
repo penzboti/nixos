@@ -30,6 +30,8 @@
       url = "github:ASIXElectronics/asix-usb-nic-linux-driver";
       flake = false;
     };
+
+    lazyvim.url = "github:pfassina/lazyvim-nix";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

@@ -16,6 +16,7 @@
     ../../modules/flatpak.nix
     ../../modules/wine.nix
     ../../modules/powermanagement.nix
+    ../../modules/virtualisation.nix
   ];
 
   # boot loader

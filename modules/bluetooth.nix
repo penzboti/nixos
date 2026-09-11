@@ -27,9 +27,8 @@
   };
   services.blueman.enable = true;
 
-  # battery life enhancement
   services.tlp = {
-    enable = true;
+    # restore bluetooth state (needs powermanagement)
     settings.RESTORE_DEVICE_STATE_ON_STARTUP=1;
   };
 }

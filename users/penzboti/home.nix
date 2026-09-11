@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lazyvim, ... }:
 {
   home.stateVersion = "24.05"; # DO NOT CHANGE UNDER ANY CIRCUMSTANCES
 
@@ -47,6 +47,9 @@
       package = pkgs.jetbrains-mono;
     };
   };
+
+  imports = [ lazyvim.homeManagerModules.default ];
+  programs.lazyvim.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
