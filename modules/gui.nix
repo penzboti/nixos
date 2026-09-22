@@ -29,17 +29,20 @@
       image = "qimgv.desktop";
       video = "vlc.desktop";
       filemanager = "thunar.desktop";
+      pdfviewer = "sioyek.desktop";
     in {
       enable = true;
       defaultApplications = {
         "inode/directory" = filemanager;
         "image/*" = image;
         "video/*" = video;
+        "application/pdf" = pdfviewer;
       };
       addedAssociations = {
         "inode/directory" = filemanager;
         "image/*" = image;
         "video/*" = video;
+        "application/pdf" = pdfviewer;
       };     
     };
   };

@@ -16,7 +16,7 @@
     ../../modules/flatpak.nix
     ../../modules/wine.nix
     ../../modules/powermanagement.nix
-    ../../modules/virtualisation.nix
+    ../../modules/uni.nix
   ];
 
   # boot loader
@@ -47,4 +47,30 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "asusvivo";
+
+  networking.networkmanager.ensureProfiles.profiles = {
+    "SCH" = {
+      connection = {
+        id = "SCH";
+        type = "wifi";
+        interface-name = "wlp1s0";
+      };
+
+      wifi = {
+        cloned-mac-address = "permanent";
+      };
+    };
+
+    "Wired connection 1" = {
+      connection = {
+        id = "Wired connection 1";
+        type = "ethernet";
+        interface-name = "enp3s0f3u2";
+      };
+
+      ethernet = {
+        cloned-mac-address = "permanent";
+      };
+    };
+  };
 }

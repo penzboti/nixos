@@ -3,5 +3,5 @@
   pkgs,
   ...
 }: {
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation.vmware.host.enable = true;
 }
