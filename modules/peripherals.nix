@@ -10,4 +10,10 @@
     users = [ "penzboti" ];
     batteryNotifier.enable = true;
   };
+  # no need, fn+f7 works
+  # services.hardware.openrgb = {
+  #   enable = true;
+  #   package = pkgs.openrgb-with-all-plugins; 
+  #   motherboard = "amd";  
+  # };
 }

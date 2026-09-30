@@ -3,7 +3,11 @@
   zen-browser,
   helium,
   ...
-}: {
+}:
+let 
+  browserlist = ["helium.desktop" "zen-beta.desktop" "firefox.desktop"];
+in
+{
   environment.systemPackages = with pkgs; [
     firefoxpwa # i need it revelaed
 
@@ -58,10 +62,15 @@
   xdg.mime = {
     enable = true;
     defaultApplications = {
-      "text/markdown" = ["helium.desktop" "zen-beta.desktop" "firefox.desktop"];
+      "text/markdown" = browserlist;
+      "text/html" = browserlist;
+      "x-scheme-handler/http" = browserlist;
+      "x-scheme-handler/https" = browserlist;
+      "x-scheme-handler/about" = browserlist;
+      "x-scheme-handler/unknown" = browserlist;
     };
     addedAssociations = {
-      "text/markdown" = ["helium.desktop" "zen-beta.desktop" "firefox.desktop"];
+      "text/markdown" = browserlist;
     };
   };
 }

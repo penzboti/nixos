@@ -17,7 +17,7 @@
     isNormalUser = true;
     home = "/home/${username}";
     description = username;
-    extraGroups = ["wheel" "networkmanager" "audio" "video"];
+    extraGroups = ["wheel" "networkmanager" "audio" "video" "render"];
   };
 
   nix.settings = {

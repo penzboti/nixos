@@ -25,6 +25,7 @@
   # 'home.sessionVariables'.
   home.sessionVariables = {
     EDITOR = "hx";
+    RUSTICL_ENABLE = "radeonsi";
   };
 
   gtk = {

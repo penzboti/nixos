@@ -12,6 +12,8 @@
   environment.systemPackages = with pkgs; [
     codeblocks
     teams-for-linux
+    freerdp # for remote desktop
+    peazip # for rar files
   ];
 
 }
