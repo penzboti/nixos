@@ -5,7 +5,12 @@
   ...
 }:
 let 
-  browserlist = ["helium.desktop" "zen-beta.desktop" "firefox.desktop"];
+  # this doesn't even do anything btw, i had to set default app trough helium
+  browserlist = [
+    "helium.desktop"
+    "zen-beta.desktop"
+    "firefox.desktop"
+  ];
 in
 {
   environment.systemPackages = with pkgs; [

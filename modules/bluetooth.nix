@@ -21,6 +21,15 @@
     };
   };
 
+  # allow device to control media
+  # services.mpris-proxy.enable = true;
+  systemd.user.services.mpris-proxy = {
+    description = "Mpris proxy";
+    after = [ "network.target" "sound.target" ];
+    wantedBy = [ "default.target" ];
+    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  };
+
   hardware.bluetooth = {
     enable = true;
     settings.General.Experimental = true;
@@ -29,6 +38,20 @@
 
   services.tlp = {
     # restore bluetooth state (needs powermanagement)
-    settings.RESTORE_DEVICE_STATE_ON_STARTUP=1;
+    # doesn't work
+    settings.RESTORE_DEVICE_STATE_ON_STARTUP = 1;
+    settings.DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth"; # still doesn't work
   };
+
+  # systemd.services.bluetooth-off-at-boot = {
+  #   description = "Turn Bluetooth off at startup";
+  #   wantedBy = [ "multi-user.target" ];
+  #   after = [ "bluetooth.service" ];
+  #   requires = [ "bluetooth.service" ];
+
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "${pkgs.util-linux}/bin/rfkill block bluetooth";
+  #   };
+  # };
 }

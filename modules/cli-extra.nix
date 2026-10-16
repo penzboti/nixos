@@ -5,7 +5,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     libnotify # custom notifiactions
-    presenterm # markdown presentations (in the terminal?)
+    # presenterm # markdown presentations (in the terminal?)
     portal # send files across devices
     chafa # image viewer (but in the terminal)
     eza # better ls
@@ -16,8 +16,10 @@
     pom # pomodoro timer
     yt-dlp # download youtube videos
     celluloid # better mpv
-    youtube-tui # why not
-    p7zip
+    # youtube-tui # why not
+    p7zip # for 7z
+    rar unrar # for rar
+    vis # small code editor
     # wiki-tui # if you need it, -p it
     # zellij # instead of tmux, but i never used either of them yet
     # ondedrive or onedriver ### side note: google drive doesn't really have a good option
