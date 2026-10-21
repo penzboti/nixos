@@ -32,6 +32,8 @@
     };
 
     lazyvim.url = "github:pfassina/lazyvim-nix";
+
+    darling-lol.url = "github:lucannez64/darling-lol";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
