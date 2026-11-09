@@ -40,8 +40,4 @@ in {
   programs = {
     steam.enable = true;
   };
-
-  imports = [
-    ./lol.nix
-  ];
 }

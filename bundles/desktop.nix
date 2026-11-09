@@ -9,5 +9,6 @@
     ../modules/gui.nix
     ../modules/browsers.nix
     ../modules/sddm.nix
+    ../modules/miracast.nix
   ];
 }

@@ -5,7 +5,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     yazi # terminal file editor
-    (ncspot.override { withCover = true; }) # terminal spotify client
+    # (ncspot.override { withCover = true; }) # terminal spotify client
     gitui # i think its better than lazygit
     # lazydocker # lazygit for docker
     ripgrep

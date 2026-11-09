@@ -29,30 +29,31 @@ stdenv.mkDerivation {
       ax88179a_772d.c
   '';
 
-  buildPhase = ''
-    runHook preBuild
+buildPhase = ''
+  runHook preBuild
 
-    make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build \
-      M=$PWD \
-      ${lib.concatStringsSep " " kernelModuleMakeFlags} \
-      EXTRA_CFLAGS="-fno-pie" \
-      modules
+  make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build \
+    M=$PWD \
+    ${lib.escapeShellArgs kernelModuleMakeFlags} \
+    EXTRA_CFLAGS="-fno-pie" \
+    modules
 
-    runHook postBuild
-  '';
+  runHook postBuild
+'';
 
-  installPhase = ''
-    runHook preInstall
+installPhase = ''
+  runHook preInstall
 
-    mkdir -p \
-      $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/net/usb
+  make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build \
+    M=$PWD \
+    ${lib.escapeShellArgs kernelModuleMakeFlags} \
+    INSTALL_MOD_PATH=$out \
+    INSTALL_MOD_DIR=kernel/drivers/net/usb \
+    INSTALL_MOD_STRIP=1 \
+    modules_install
 
-    install -Dm644 \
-      ax_usb_nic.ko \
-      $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/net/usb/ax_usb_nic.ko
-
-    runHook postInstall
-  '';
+  runHook postInstall
+'';
 
   meta = {
     description = "ASIX AX88179B/A USB Ethernet driver";

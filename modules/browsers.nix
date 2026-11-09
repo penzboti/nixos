@@ -35,7 +35,7 @@ in
 
     # 🚩 Flags - Command-line arguments always passed to Helium
     flags = [
-      "--disable-gpu"
+      # "--disable-gpu"
       "--ozone-platform-hint=auto"
     ];
 

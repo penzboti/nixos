@@ -6,7 +6,7 @@
 
   imports = [
     ./eduroam.nix
-    ./virtualisation.nix
+    # ./virtualisation.nix
   ];
 
   environment.systemPackages = with pkgs; [
