@@ -41,8 +41,8 @@
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
-      allowUnfree = true;
-    };
+      config.android_sdk.accept_license = true;
+};
     specialArgs = {
       inherit pkgs username;
     } // inputs;

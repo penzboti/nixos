@@ -17,6 +17,7 @@
     ../../modules/wine.nix
     ../../modules/powermanagement.nix
     ../../modules/uni.nix
+    ../../modules/godot_android.nix
   ];
 
   # boot loader
@@ -33,6 +34,7 @@
       shut = "shutdown -h now";
       buildnix = "sudo nixos-rebuild switch --flake ~/nixos/#asusvivo"; 
       space = "df -h | grep -E '/dev/nvme0n1p2|Filesystem'";
+      pico8 = "nix-shell /home/penzboti/apps/pico-8/shell.nix";
     };
   };
 
