@@ -4,9 +4,9 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    helix
-
-    # steel # it would be better to have built it from source; (just like helix; for extensions)
+    # helix # latest main repo release
+    steelix # the fork with extensions; rolling sometimes
+    steel
 
     # language servers
     rust-analyzer
@@ -14,9 +14,12 @@
     markdown-oxide
     nixd
     nixfmt
-    python313Packages.jedi-language-server
-    simple-completion-language-server
+    python313Packages.jedi-language-server # python
+    simple-completion-language-server # helix editor snippets
     vscode-json-languageserver
-    lemminx
+    lemminx # xml
+    lua-language-server
+    (pkgs.callPackage ../packages/pico8-ls/default.nix {})
   ];
+
 }

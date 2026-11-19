@@ -22,11 +22,8 @@
   };
 
   # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'.
-  home.sessionVariables = {
-    EDITOR = "hx";
-    RUSTICL_ENABLE = "radeonsi";
-  };
+  # home.sessionVariables = { };
+  # NOTE: set variables in hyprland config; they actually get set
 
   gtk = {
     enable = true;
